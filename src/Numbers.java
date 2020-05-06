@@ -103,7 +103,7 @@ public class Numbers {
     }
 
     public void printRomanMns(int i){
-        if (i ==  0)
+        if (i == 0)
             System.out.println("Так-то должен быть 0, но римской цифры 0, вроде как нет(");
         else if (i ==  1)
             System.out.printf("I");
@@ -143,23 +143,20 @@ public class Numbers {
         k = romanNbr(b);
 
         switch (simbol){
-            case "+":{
+            case "+":
                 bigRomans(i +  k);
                 break;
-            }
-            case "-" :{
+            case "-":
                 if (i - k <  0){
-                System.out.printf("Не уверен, что римские цифры могут принимать отрицательное значение, поэтому либо это ошибка либо ответ = -");
-                printRomanMns(k - i);
+                    System.out.printf("Не уверен, что римские цифры могут принимать отрицательное значение, поэтому либо это ошибка либо ответ = -");
+                    printRomanMns(k - i);
                 } else
-                printRomanMns(i - k);
+                    printRomanMns(i - k);
                 break;
-            }
-            case "*":{
+            case "*":
                 bigRomans(i * k);
                 break;
-            }
-            case "/" :{
+            case "/":
                 if (i %  k != 0)
                     System.out.println(a + " нельзя разделить на " + b + " без остатка. Римской цифры " + (((double) i) / k) + " нет");
                 else
@@ -168,7 +165,6 @@ public class Numbers {
                     else
                         printRomanMns(i / k);
                 break;
-            }
             default:
                 tryAgain();
         }
